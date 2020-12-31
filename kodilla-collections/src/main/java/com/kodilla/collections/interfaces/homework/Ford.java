@@ -29,6 +29,13 @@ public class Ford implements Car {
     }
 
     @Override
+    public String toString() {
+        return "Ford{" +
+                "speed=" + speed +
+                '}';
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;

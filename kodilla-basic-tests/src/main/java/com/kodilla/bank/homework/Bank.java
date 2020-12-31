@@ -38,48 +38,43 @@ public class Bank {
     public int totalDeposits() {
         totalDeposits = 0;
         for (int i = 0; i < machines.length; i++) {
-            if (machines[i].depositSize == 0) {
-                return 0;
-            } else {
-                totalDeposits += machines[i].getDepositSize();
-            }
+            totalDeposits += machines[i].getDepositSize();
         }
         return totalDeposits;
     }
 
     public int totalWithdrawals() {
+        totalWithdrawals = 0;
         for (int i = 0; i < machines.length; i++) {
-            if (machines[i].withdrawalSize == 0) {
-                return 0;
-            }
+            totalWithdrawals += machines[i].getWithdrawalSize();
         }
         return totalWithdrawals;
     }
 
     public double totalDepositAverage() {
-        if (totalDeposits == 0) {
+        if (totalDeposits == 0)
             return 0;
-        } else {
+        else {
             depositAverage = 0;
-            int sum = 0;
+            double sum = 0;
             for (int i = 0; i < machines.length; i++) {
-                sum += machines[i].depositSum;
+                sum += machines[i].getDepositSum();
+                depositAverage = sum / totalDeposits();
             }
-            depositAverage = sum / totalDeposits;
             return depositAverage;
         }
     }
 
     public double totalWithdrawalAverage() {
-        if (totalWithdrawals == 0) {
+        if (withdrawalAverage == 0)
             return 0;
-        } else {
+        else {
             withdrawalAverage = 0;
-            int sum = 0;
+            double sum = 0;
             for (int i = 0; i < machines.length; i++) {
-                sum += machines[i].withdrawalSum;
+                sum += machines[i].getWithdrawalSum();
+                withdrawalAverage = sum / totalWithdrawals();
             }
-            withdrawalAverage = sum / withdrawalAverage;
             return withdrawalAverage;
         }
     }

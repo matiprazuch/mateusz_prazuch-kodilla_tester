@@ -17,6 +17,6 @@ public class CarRace {
         car.increaseSpeed();
         car.decreaseSpeed();
         car.decreaseSpeed();
-        System.out.println("Predkosc wynosi: " + car.getSpeed());
+        System.out.println("Predkosc samochodu wynosi: " + car.getSpeed());
     }
 }
