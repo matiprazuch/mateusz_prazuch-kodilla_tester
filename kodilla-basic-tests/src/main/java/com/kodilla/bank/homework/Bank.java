@@ -52,9 +52,6 @@ public class Bank {
     }
 
     public double totalDepositAverage() {
-        if (totalDeposits == 0)
-            return 0;
-        else {
             depositAverage = 0;
             double sum = 0;
             for (int i = 0; i < machines.length; i++) {
@@ -62,13 +59,9 @@ public class Bank {
                 depositAverage = sum / totalDeposits();
             }
             return depositAverage;
-        }
     }
 
     public double totalWithdrawalAverage() {
-        if (withdrawalAverage == 0)
-            return 0;
-        else {
             withdrawalAverage = 0;
             double sum = 0;
             for (int i = 0; i < machines.length; i++) {
@@ -76,6 +69,5 @@ public class Bank {
                 withdrawalAverage = sum / totalWithdrawals();
             }
             return withdrawalAverage;
-        }
     }
 }
