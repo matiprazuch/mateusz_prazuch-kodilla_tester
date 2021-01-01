@@ -15,6 +15,7 @@ public class Bank {
         this.machines = new CashMachine[0];
         this.numberOfMachines = 0;
     }
+
     public void addMachine(CashMachine balance) {
         this.numberOfMachines++;
         CashMachine[] newTab = new CashMachine[this.numberOfMachines];
@@ -52,22 +53,30 @@ public class Bank {
     }
 
     public double totalDepositAverage() {
+        if (totalDeposits() == 0) {
+            return 0;
+        } else {
             depositAverage = 0;
             double sum = 0;
             for (int i = 0; i < machines.length; i++) {
                 sum += machines[i].getDepositSum();
-                depositAverage = sum / totalDeposits();
             }
+            depositAverage = sum / totalDeposits();
             return depositAverage;
+        }
     }
 
     public double totalWithdrawalAverage() {
+        if (totalWithdrawals() == 0) {
+            return 0;
+        } else {
             withdrawalAverage = 0;
             double sum = 0;
             for (int i = 0; i < machines.length; i++) {
                 sum += machines[i].getWithdrawalSum();
-                withdrawalAverage = sum / totalWithdrawals();
             }
+            withdrawalAverage = sum / totalWithdrawals();
             return withdrawalAverage;
+        }
     }
 }

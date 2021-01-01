@@ -107,4 +107,28 @@ public class BankTestSuite {
         machine3.addTransaction(-2000);
         assertEquals(-2000, theBank.totalWithdrawalAverage());
     }
+
+    @Test
+    public void shouldReturnZeroAverageWhenNoDeposits() {
+        theBank.addMachine(machine1);
+        theBank.addMachine(machine2);
+        theBank.addMachine(machine3);
+        machine2.addTransaction(-3000);
+        machine3.addTransaction(-2000);
+        machine1.addTransaction(-3000);
+        machine2.addTransaction(-1500);
+        assertEquals(0, theBank.totalDepositAverage());
+    }
+
+    @Test
+    public void shouldReturnZeroAverageWhenNoWithdrawals() {
+        theBank.addMachine(machine1);
+        theBank.addMachine(machine2);
+        theBank.addMachine(machine3);
+        machine2.addTransaction(3000);
+        machine3.addTransaction(2000);
+        machine1.addTransaction(3000);
+        machine2.addTransaction(1500);
+        assertEquals(0, theBank.totalWithdrawalAverage());
+    }
 }
