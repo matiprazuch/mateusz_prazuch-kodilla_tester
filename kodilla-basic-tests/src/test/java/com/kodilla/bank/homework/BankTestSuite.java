@@ -65,10 +65,9 @@ public class BankTestSuite {
         theBank.addMachine(machine2);
         theBank.addMachine(machine1);
         machine3.addTransaction(1000);
-        machine2.addTransaction(5000);
-        machine1.addTransaction(-3000);
+        machine2.addTransaction(-5000);
+        machine1.addTransaction(3000);
         machine2.addTransaction(2000);
-        theBank.totalDeposits();
         assertEquals(3, theBank.totalDeposits());
     }
 
