@@ -17,10 +17,14 @@ public class CarsListApplication {
         cars.add(new Opel(90));
         cars.add(new Opel(70));
         cars.add(new Volvo(150));
+        Car volvo = new Volvo(150);
         cars.remove(2);
         cars.remove(new Volvo(150));
+        cars.add(volvo);
+        System.out.println(cars);
+        cars.remove(volvo);
 
-        System.out.println(cars.size());
+        System.out.println(cars);
 
         for(Car car : cars) {
             CarUtils.describeCar(car);

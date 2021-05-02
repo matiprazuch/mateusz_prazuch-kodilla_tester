@@ -6,10 +6,13 @@ import java.util.Random;
 public class Volvo implements Car {
 
     private int speed;
+    private Random random;
 
     public Volvo(int speed) {
         this.speed = speed;
+        this.random = new Random();
     }
+
     @Override
     public int getSpeed() {
         return speed;
@@ -17,14 +20,12 @@ public class Volvo implements Car {
 
     @Override
     public void increaseSpeed() {
-        Random random = new Random();
         speed = getSpeed() + (random.nextInt(60) + 1);
 
     }
 
     @Override
     public void decreaseSpeed() {
-        Random random = new Random();
         speed = getSpeed() - (random.nextInt(50) + 1);
 
     }

@@ -1,5 +1,7 @@
 package com.kodilla.bank.homework;
 
+import org.w3c.dom.ls.LSOutput;
+
 public class CashMachine {
 
     public int[] transactions;
@@ -19,7 +21,7 @@ public class CashMachine {
 
     public void addTransaction(int value) {
         if (value == 0) {
-            return;
+            System.out.println("Transaction value is 0, please try again.");
         } else {
             this.size++;
             int[] newTransactions = new int[this.size];
@@ -27,21 +29,25 @@ public class CashMachine {
             newTransactions[this.size - 1] = value;
             this.transactions = newTransactions;
 
-            if (value > 0) {
-                this.depositSize++;
-                balance += value;
-                System.out.println("Wpłacono " + value);
-            } else if (value < 0) {
-                if (balance < value * -1) {
-                    System.out.println("Brak wystarczajacych środkow");
-                } else {
-                    this.withdrawalSize++;
-                    balance += value;
-                    System.out.println("Wypłacono: " + value);
-                }
+            checkValue(value);
+        }
+    }
+
+    public void checkValue(int value) {
+        if (value > 0) {
+            this.depositSize++;
+            balance += value;
+            System.out.println("Deposit: " + value);
+        } else if (value < 0) {
+            if (balance < value * -1) {
+                System.out.println("Not enough money on your account");
             } else {
-                System.out.println("stan konta nie zmieniony");
+                this.withdrawalSize++;
+                balance += value;
+                System.out.println("Withdrawal: " + value);
             }
+        } else {
+            System.out.println("Account balance has not been changed");
         }
     }
 

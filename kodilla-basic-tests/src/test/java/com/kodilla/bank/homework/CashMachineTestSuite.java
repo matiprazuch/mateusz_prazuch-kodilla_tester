@@ -18,10 +18,10 @@ public class CashMachineTestSuite {
     @Test
     public void shouldAddTransaction() {
 
-        cashMachine.addTransaction(400);
-        assertEquals(5400, cashMachine.getBalance());
-        cashMachine.addTransaction(-200);
+        cashMachine.addTransaction(200);
         assertEquals(5200, cashMachine.getBalance());
+        cashMachine.addTransaction(-400);
+        assertEquals(4800, cashMachine.getBalance());
     }
 
     @Test
@@ -55,7 +55,7 @@ public class CashMachineTestSuite {
         cashMachine.addTransaction(400);
         cashMachine.addTransaction(-700);
         cashMachine.addTransaction(200);
-        cashMachine.addTransaction(-10000);
+        cashMachine.addTransaction(-100000);
         assertEquals(600, cashMachine.getDepositSum());
     }
 

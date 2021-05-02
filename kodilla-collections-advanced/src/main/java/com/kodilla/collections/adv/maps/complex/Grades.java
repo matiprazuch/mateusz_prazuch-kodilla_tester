@@ -10,4 +10,16 @@ public class Grades {
         for (double grade : grades)
             this.grades.add(grade);
     }
+
+    @Override
+    public String toString() {
+        return "Grades: " + grades.toString();
+    }
+
+    public double getAverage() {
+        double sum = 0.0;
+        for (double grade : grades)
+            sum += grade;
+        return sum / grades.size();
+    }
 }
