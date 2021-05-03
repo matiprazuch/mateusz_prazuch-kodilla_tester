@@ -15,10 +15,14 @@ public class Calculator {
     }
 
     public double circleArea(double r) {
+        String name = UserDialogs.getUserName();
+        System.out.println("Hi " + name + "! Thanks for using our software.");
         return PI * r * r;
     }
 
     public double circlePerimeter(double r) {
+        String name = UserDialogs.getUserName();
+        System.out.println("Hi " + name + "! Thanks for using our software.");
         return 2 * PI * r;
     }
 }
