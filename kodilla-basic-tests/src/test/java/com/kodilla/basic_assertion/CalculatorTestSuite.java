@@ -10,10 +10,14 @@ public class CalculatorTestSuite {
 
     public void testSum() {
         Calculator calculator = new Calculator();
-        int a = 5;
+        int a = -2;
         int b = 8;
         int sumResult = calculator.sum(a,b);
+        int subtractResult = calculator.subtract(a,b);
+        int expResult = calculator.exponentiation(a);
 
-        assertEquals(13, sumResult);
+        assertEquals(6, sumResult);
+        assertEquals(-10, subtractResult);
+        assertEquals(4, expResult);
     }
 }
