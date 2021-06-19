@@ -16,6 +16,8 @@ public class Ford implements Car {
     public int getSpeed() {
         if (speed < 0) {
             return 0;
+        } else if (speed > 240){
+            return 240;
         } else {
             return speed;
         }

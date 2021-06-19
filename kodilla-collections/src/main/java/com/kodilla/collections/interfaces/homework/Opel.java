@@ -16,6 +16,8 @@ public class Opel implements Car {
     public int getSpeed() {
         if (speed < 0) {
             return 0;
+        } else if (speed > 270){
+            return 270;
         } else {
             return speed;
         }

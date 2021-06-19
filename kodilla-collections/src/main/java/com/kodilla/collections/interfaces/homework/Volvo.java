@@ -17,6 +17,8 @@ public class Volvo implements Car {
     public int getSpeed() {
         if (speed < 0) {
             return 0;
+        } else if (speed > 300){
+            return 300;
         } else {
             return speed;
         }
