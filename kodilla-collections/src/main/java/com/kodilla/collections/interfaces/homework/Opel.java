@@ -6,25 +6,29 @@ import java.util.Random;
 public class Opel implements Car {
 
     private int speed;
+    private Random random;
 
     public Opel(int speed) {
         this.speed = speed;
+        this.random = new Random();
     }
     @Override
     public int getSpeed() {
-        return speed;
+        if (speed < 0) {
+            return 0;
+        } else {
+            return speed;
+        }
     }
 
     @Override
     public void increaseSpeed() {
-        Random random = new Random();
         speed = getSpeed() + (random.nextInt(20) + 1);
 
     }
 
     @Override
     public void decreaseSpeed() {
-        Random random = new Random();
         speed = getSpeed() - (random.nextInt(40) + 1);
 
     }

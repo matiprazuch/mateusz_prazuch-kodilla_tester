@@ -15,7 +15,11 @@ public class Volvo implements Car {
 
     @Override
     public int getSpeed() {
-        return speed;
+        if (speed < 0) {
+            return 0;
+        } else {
+            return speed;
+        }
     }
 
     @Override

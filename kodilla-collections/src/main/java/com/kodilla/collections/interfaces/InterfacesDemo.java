@@ -16,4 +16,5 @@ public class InterfacesDemo {
         System.out.println(shape.getArea());
         System.out.println(shape.getPerimeter());
     }
+
 }
