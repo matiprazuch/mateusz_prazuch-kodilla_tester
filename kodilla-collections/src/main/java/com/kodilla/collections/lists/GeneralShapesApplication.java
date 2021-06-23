@@ -13,12 +13,14 @@ class GeneralShapesListApplication {
         List<Shape> shapes = new LinkedList<>();
         Square square = new Square(10);
         shapes.add(square);
-        shapes.add(new Square(10));
         shapes.add(new Circle(7.0));
-        shapes.add(new Triangle(10.0,4.0,10.77));
+        shapes.add(new Triangle(10.0,3.0,10.77));
 
         shapes.remove(1);
         shapes.remove(square);
+        Triangle triangle = new Triangle(10.0,4.0,10.77);
+        shapes.add(triangle);
+        shapes.remove(triangle);
         System.out.println(shapes.size());
 
         for (Shape shape : shapes) {
